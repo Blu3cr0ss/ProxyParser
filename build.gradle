@@ -1,0 +1,35 @@
+plugins {
+    id 'java'
+    id 'application'
+    id "com.github.johnrengelman.shadow" version "7.1.2"
+}
+
+application.mainClass = 'idk.bluecross.proxyParser.Main'
+
+group 'idk.bluecross'
+version '1'
+
+repositories {
+    mavenCentral()
+}
+
+shadowJar{
+    archiveFileName = "ProxyParser.jar"
+}
+
+jar {
+    enabled = false
+}
+
+jar{
+    manifest {
+        attributes(
+                "Main-Class" : "idk.bluecross.proxyParser.Main"
+        )
+    }
+}
+
+dependencies {
+    implementation 'org.jsoup:jsoup:1.15.3'
+    implementation 'org.junit.jupiter:junit-jupiter:5.10.0'// working with DOM
+}
