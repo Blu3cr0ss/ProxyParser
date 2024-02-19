@@ -1,4 +1,6 @@
-package idk.bluecross.proxyParser;
+package idk.bluecross.proxyParser.util;
+
+import idk.bluecross.proxyParser.settings.Settings;
 
 public class Logger {
 

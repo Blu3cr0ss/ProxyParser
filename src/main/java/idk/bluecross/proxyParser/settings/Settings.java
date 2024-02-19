@@ -1,4 +1,4 @@
-package idk.bluecross.proxyParser;
+package idk.bluecross.proxyParser.settings;
 
 import java.util.ArrayList;
 
@@ -12,4 +12,5 @@ public class Settings {
     public static ArrayList<String> disallowedCountries;
     public static boolean silent;
     public static boolean verbose;
+    public static boolean https = true;
 }

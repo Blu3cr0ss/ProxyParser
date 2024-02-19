@@ -6,12 +6,5 @@ public class ProxyData extends AbstractProxyData {
         this.port = port;
     }
 
-    public class ProxyDataWithSpeed extends ProxyData {
-        public int speed;
 
-        public ProxyDataWithSpeed(String ip, int port, int speed) {
-            super(ip, port);
-            this.speed = speed;
-        }
-    }
 }

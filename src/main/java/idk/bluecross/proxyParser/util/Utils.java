@@ -1,6 +1,5 @@
-package idk.bluecross.proxyParser;
+package idk.bluecross.proxyParser.util;
 
-import java.lang.reflect.ParameterizedType;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;

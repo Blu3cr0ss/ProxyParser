@@ -1,6 +1,6 @@
 package idk.bluecross.proxyParser.args;
 
-import idk.bluecross.proxyParser.Settings;
+import idk.bluecross.proxyParser.settings.Settings;
 
 public class ArgumentCount extends AbstractArgument<Integer> {
     public ArgumentCount() {

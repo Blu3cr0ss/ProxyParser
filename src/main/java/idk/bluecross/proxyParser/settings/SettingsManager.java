@@ -1,8 +1,10 @@
-package idk.bluecross.proxyParser;
+package idk.bluecross.proxyParser.settings;
 
+import idk.bluecross.proxyParser.util.Logger;
+import idk.bluecross.proxyParser.util.Utils;
 import idk.bluecross.proxyParser.args.*;
 
-import static idk.bluecross.proxyParser.Settings.*;
+import static idk.bluecross.proxyParser.settings.Settings.*;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -20,6 +22,7 @@ public class SettingsManager {
         existingArguments.add(new ArgumentDeepPinging());
         existingArguments.add(new ArgumentAllowTransparent());
         existingArguments.add(new ArgumentOutputLatency());
+        existingArguments.add(new ArgumentHttps());
     }
 
     private String getHelpMessage() {
@@ -86,11 +89,12 @@ public class SettingsManager {
         if (args.size() % 2 != 0)
             throw new RuntimeException("Some argument haven't value OR you have argument with 2 values OR you have spaces in Array argument");
         List<AbstractArgument> mappedArgs = mapStringArgumentsToArguments(args);
+        mappedArgs.forEach(AbstractArgument::process);
+
         Logger.info("Ok, settings: ");
         mappedArgs.forEach(arg -> {
-            System.out.println(" + " + arg.fullName + " -> " + arg.value);
+            Logger.info(" + " + arg.fullName + " -> " + arg.value);
         });
-        mappedArgs.forEach(AbstractArgument::process);
     }
 
     public SettingsManager() {
